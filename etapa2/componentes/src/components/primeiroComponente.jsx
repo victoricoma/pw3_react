@@ -1,10 +1,13 @@
-import segundoComponente from './segundoComponente'
-const primeiroComponente = () => {
-    return (
-        <>
+import SegundoComponente from './SegundoComponente'
+const PrimeiroComponente = () => {
+    return(
+        <div>
             <h2>Primeiro Componente</h2>
-            <segundoComponente />
-        </>
+            <div>
+                <SegundoComponente />
+            </div>
+        </div>
     );
 }
-export default primeiroComponente;
+
+export default PrimeiroComponente;
