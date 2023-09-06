@@ -3,12 +3,19 @@ import TerceiroComponente from "./terceiroComponente";
 const SegundoComponente = () => {
     const aluno = {
         nome: 'João',
-        idade: 16,
+        idade: 18,
         curso: 'Informática',
         cidade: 'São Paulo',
         estado: 'SP',
         pais: 'Brasil',
         matriculado: true
+    }
+    const renderizadorAluno = (x) => {
+        if (x) {
+            return<h1>Cursando</h1>
+        }else{
+            return<h1>Desistente</h1>
+        }   
     }
     return (
         <div>
@@ -20,6 +27,9 @@ const SegundoComponente = () => {
                 <strong>Estado: </strong>{aluno.estado}<br />
                 <strong>País: </strong>{aluno.pais}<br />
                 <strong>Matriculado: </strong>{aluno.matriculado ? 'Sim' : 'Não'}<br />
+                <div>
+                    {renderizadorAluno(aluno.matriculado)}
+                </div>
             </div>
             <div>
                 <TerceiroComponente />
