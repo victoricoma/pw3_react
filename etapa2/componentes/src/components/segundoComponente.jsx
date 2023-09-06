@@ -10,6 +10,13 @@ const SegundoComponente = () => {
         pais: 'Brasil',
         matriculado: true
     }
+    const renderizadorAluno =(x) =>{
+        if(x){
+            return <h1>Cursando</h1>
+        } else {
+            return <h1>Desistente</h1>
+        }
+    }
     return (
         <div>
             <div>
@@ -20,6 +27,9 @@ const SegundoComponente = () => {
                 <strong>Estado: </strong>{aluno.estado}<br />
                 <strong>País: </strong>{aluno.pais}<br />
                 <strong>Matriculado: </strong>{aluno.matriculado ? 'Sim' : 'Não'}<br />
+                <div>
+                    {renderizadorAluno(aluno.matriculado)}
+                </div>
             </div>
             <div>
                 <TerceiroComponente />
