@@ -14,10 +14,11 @@ const ListaDados = () =>{
 
     const apagarUsuario = () => {
         const aleatorio = Math.floor(Math.random() * user.length)
+        console.log(aleatorio)
 
         setUser((prev) => {
             console.log(prev)
-            return prev.filter((itemUser) => aleatorio !== user.id)
+            return prev.filter((user) => aleatorio !== user.id)
         })
     }
 
