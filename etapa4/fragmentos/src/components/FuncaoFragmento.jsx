@@ -1,0 +1,11 @@
+import React from 'react'
+
+const FuncaoFragmento = ({ appFuncao }) => {
+  return (
+    <>
+    <button onClick={appFuncao}>Efeito da Função</button>
+    </>
+  )
+}
+
+export default FuncaoFragmento

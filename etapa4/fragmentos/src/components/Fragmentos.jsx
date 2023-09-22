@@ -1,5 +1,3 @@
-import ListaFragmentos from "./ListaFragmentos"
-
 const Fragmentos = ({marca, km, modelo, usado}) => {
   return (
     <>
