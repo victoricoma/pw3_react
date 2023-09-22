@@ -1,51 +1,48 @@
-import React, { useState } from 'react';
+import { useState } from "react"
 
-const ListaDados = () => {
-    const [users, setUsers] = useState([
-        { id: 1, nome: 'João Pedro', idade: 18 },
-        { id: 2, nome: 'Kamily Simeão', idade: 18 },
-        { id: 3, nome: 'Gustavo Dias Rodrigues', idade: 17 },
-        { id: 4, nome: 'Gustavo Campi', idade: 50 },
-        { id: 5, nome: 'Davi Ozan Alves', idade: 48 },
-        { id: 6, nome: 'Fabio Zirondi', idade: 17 },
-        { id: 7, nome: 'Olga Marinha', idade: 34 },
-        { id: 8, nome: 'Marilia Gabriela', idade: 30 },
-    ]);
+const ListaDados = () =>{
+    const [user, setUser] = useState([
+        {id: 1, nome:'Astolfo Roberto Caruzo', idade: 32},
+        {id: 2, nome:'Roberto Dinis SIlva', idade: 24},
+        {id: 3, nome:'Mizael Pereira', idade: 32},
+        {id: 4, nome:'Gustavo Turco Dijalma Alvaz Herculio', idade: 36},
+        {id: 5, nome:'Ruan Albert Tabolka', idade: 25},
+        {id: 6, nome:'João Pedro Zirondi', idade: 19},
+        {id: 7, nome:'Marcos Pereira Gustin', idade: 42},
+        {id: 8, nome:'Wellington Washigton Walter', idade: 23}
+    ])
 
     const apagarUsuario = () => {
-        const aleatorio = Math.floor(Math.random() * users.length);
+        const aleatorio = Math.floor(Math.random() * user.length)
+        console.log(aleatorio)
 
-        setUsers((prevUsers) => {
-            const newUsers = prevUsers.filter((itemUser) => itemUser.id !== aleatorio + 1); // +1 para corresponder ao ID
-            return newUsers;
-        });
-    };
+        setUser((prev) => {
+            console.log(prev)
+            return prev.filter((user) => aleatorio !== user.id)
+        })
+    }
 
-    return (
+    return(
         <div>
             <table>
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>nome</th>
-                        <th>idade</th>
+                <tr>
+                    <th>id</th>
+                    <th>nome</th>
+                    <th>Idade</th>
+                </tr>
+                {user.map((tableItem) =>(
+                    <tr key={tableItem.id}>
+                        <td>{tableItem.id}</td>
+                        <td>{tableItem.nome}</td>
+                        <td>{tableItem.idade}</td>
                     </tr>
-                </thead>
-                <tbody>
-                    {users.map((item) => (
-                        <tr key={item.id}>
-                            <td>{item.id}</td>
-                            <td>{item.nome}</td>
-                            <td>{item.idade}</td>
-                        </tr>
-                    ))}
-                </tbody>
+                ))}
             </table>
             <div>
-                <button onClick={apagarUsuario}>Eliminar Usuário Aleatório</button>
+                <button onClick={apagarUsuario}>Elimina Usuario Aleatório</button>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default ListaDados;
+export default ListaDados

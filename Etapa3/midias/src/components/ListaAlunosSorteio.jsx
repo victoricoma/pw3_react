@@ -1,57 +1,57 @@
-import React, { useState } from 'react'
-const ListaAlunosSorteio = () => {
-    const [alunos, setAlunos] = useState([
-        { id: 1, nome: 'João Pedro', idade: 18 },
-        { id: 2, nome: 'Kamily Simeão', idade: 18 },
-        { id: 3, nome: 'Gustavo Dias Rodrigues', idade: 17 },
-        { id: 4, nome: 'Gustavo Campi', idade: 50 },
-        { id: 5, nome: 'Davi Ozan Alves', idade: 48 },
-        { id: 6, nome: 'Fabio Zirondi', idade: 17 },
-        { id: 7, nome: 'Olga Marinha', idade: 34 },
-        { id: 8, nome: 'Marilia Gabriela', idade: 30 },
-        { id: 9, nome: 'Icoma Chan', idade: 40 },
-        { id: 10, nome: 'Gil fofinha', idade: 37 },
-        { id: 11, nome: 'Gabruel', idade: 22 },
-        { id: 12, nome: 'junior campos', idade: 30 },
-        { id: 13, nome: 'Marcio Donato', idade: 34 },
-        { id: 14, nome: 'Eduardo Lopes', idade: 69 },
-        { id: 15, nome: 'leonardo Silvera', idade: 34 },
-        { id: 16, nome: 'Jonas Moraes', idade: 54 },
-        { id: 17, nome: 'Maria Gabriela', idade: 40 },
-        { id: 18, nome: 'Gabriela nunes', idade: 23 },
-        { id: 19, nome: 'Jeraldo carlos', idade: 31 },
-        { id: 20, nome: 'Joao pedro gomes', idade: 32 },
+import { useState } from "react"
+
+const ListaAlunosSorteio = () =>{
+    const [alunos,setAlunos] = useState([
+        {id: 1, nome:'Breno Silva', idade: 20},
+        {id: 2, nome:'Fábio Bernardelli', idade: 17},
+        {id: 3, nome:'Gabriel Rodrigues', idade: 22},
+        {id: 4, nome:'Gustavo Afonso', idade: 28},
+        {id: 5, nome:'Gustavo Caruzo', idade: 17},
+        {id: 6, nome:'Gustavo Campi', idade: 18},
+        {id: 7, nome:'Igor Afonso', idade: 24},
+        {id: 8, nome:'Izabela Souza', idade: 33},
+        {id: 9, nome:'João Pedro Alves', idade: 18},
+        {id: 10, nome:'João Pedro de Oliveira', idade: 19},
+        {id: 11, nome:'João Victor de Souza', idade: 22},
+        {id: 12, nome:'Kamily Simeão', idade: 18},
+        {id: 13, nome:'Leandro de Jesus', idade: 18},
+        {id: 14, nome:'Olga Lopes', idade: 18},
+        {id: 15, nome:'Rafael Luz', idade: 27},
+        {id: 16, nome:'Rafael Calera', idade: 19},
+        {id: 17, nome:'Ruan Palhares', idade: 20}
     ])
 
-    const ArmazenarAlunos = () => {
+    const apagarAluno = () => {
         const aleatorio = Math.floor(Math.random() * alunos.length)
+        console.log(aleatorio)
 
         setAlunos((prevAlunos) => {
             console.log(prevAlunos)
-            return prevAlunos.filter((alunos) => aleatorio !== alunos.id);
+            return prevAlunos.filter((alunos) => aleatorio !== alunos.id)
         })
     }
 
-    return (
+    return(
         <div>
             <table>
                 <tr>
                     <th>id</th>
                     <th>nome</th>
-                    <th>idade</th>
+                    <th>Idade</th>
                 </tr>
-                {alunos.map((item) => (
-                    <tr key={item.id}>
-                        <td>{item.id}</td>
-                        <td>{item.nome}</td>
-                        <td>{item.idade}</td>
+                {alunos.map((tableItem) =>(
+                    <tr key={tableItem.id}>
+                        <td>{tableItem.id}</td>
+                        <td>{tableItem.nome}</td>
+                        <td>{tableItem.idade}</td>
                     </tr>
                 ))}
             </table>
             <div>
-                <button onClick={ArmazenarAlunos}>Sorteia um aluno aleatorio</button>
+                <button onClick={apagarAluno}>Retirar Aluno</button>
             </div>
         </div>
     )
 }
+
 export default ListaAlunosSorteio
