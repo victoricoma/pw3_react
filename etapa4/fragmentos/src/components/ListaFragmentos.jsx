@@ -12,7 +12,10 @@ const ListaFragmentos = ({motos}) => {
         </tr>
         {motos.map((itemMoto)=> {
           return(
-            <tr key={itemMoto.id} style={{fontSize: "18px"}}>
+            <tr key={itemMoto.id} style={
+              itemMoto.id % 2 === 0 ? 
+              {backgroundColor: "#ccc", color: "#000"} : null
+              }>
                 <td>{itemMoto.marca}</td>
                 <td>{itemMoto.modelo}</td>
                 <td>{itemMoto.km}</td>
