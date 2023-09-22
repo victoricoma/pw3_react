@@ -1,6 +1,5 @@
-import ListaFragmentos from "./ListaFragmentos"
-
 const Fragmentos = ({marca, km, modelo, usado}) => {
+
   return (
     <>
     <h2>Componente de Props</h2>
